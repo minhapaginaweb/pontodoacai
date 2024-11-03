@@ -6,7 +6,7 @@ function enviarPedido(event) {
   const mensagem = encodeURIComponent(pedido); // Codifica a mensagem para URL
 
   // Constrói a URL do WhatsApp
-  const urlWhatsApp = `https://wa.me/${84981089164}?text=${mensagem}`;
+  const urlWhatsApp = `https://wa.me/${5584981089164}?text=${mensagem}`;
 
   // Redireciona para o WhatsApp
   window.open(urlWhatsApp, '_blank');
