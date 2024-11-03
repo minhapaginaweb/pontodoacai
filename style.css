@@ -1,180 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
 }
-
-.container {
-    background-image: linear-gradient(43deg, #310242 0%, #25012b 46%, #2f0144 100%);
-
-    width: 100%;
-    height: 100vh;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    color: #F0F8FF;
-}
-
-/* variáveis */
 
 :root {
-    --cor-borda: #F0F8FF;
-  }
-
-/* header */ 
-
-.header {
-    height: 15vh;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 1% 0;
+  --font-text-principal: "Open Sans", sans-serif;
+  --box-shadow: 0 1px 5px rgba(96,0,133,.2), 0 2px 2px rgba(96,0,133,.14), 0 3px 1px -2px rgba(96,0,133,.12);
 }
 
-.header img {
-    width: 14vw;
-    border-radius: 50%;
+html {
+  font-size: 62.5%;
 }
 
-/* main */
+html, body {
+  height: 100vh;
 
-.main {
-    height: 80vh;
-    width: 80%;
-
-    border: 0.18rem solid var(--cor-borda);
-    border-radius: 20px;
-
-    flex-grow: 1;
-
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
+  background: white;
 }
 
-.main::-webkit-scrollbar {
-        width: 3px;
-        background-color: transparent;
-}
-      
-.main::-webkit-scrollbar-thumb {
-        background-color: transparent;
-}
+/* Header */
+#header {
+  width: 100%;
 
-/* alinhamento das 3 colunas */
+  padding: 1.5rem;
+  background-color: rgba(96,0,133,255);
 
-.colunas {
-    display: flex;
+  position: fixed;
 }
 
-.coluna-esquerda, .coluna-meio, .coluna-direita {
-    width: 33%;
-    height: 100%;
+#header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.coluna-meio {
-    margin-left: 19px;
+#header nav ul li a{
+  padding: .5rem;
+
+  font-family: "Playwrite GB S", cursive;
+  font-weight: bold;
+  color: white;
+
+  transition: background 0.4s ease;
+
+  cursor: pointer;
 }
 
-/* titulos */
-
-/* titulo cardápio */
-
-.cardapio-titulo {
-    width: 30%;
-
-    padding: 2px 0;
-    margin: 10px auto 0 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font: 700 1.9rem 'Roboto Condensed', sans-serif;
-    letter-spacing: 2px;
-    text-align: center;
-
-    border-bottom: 0.18rem solid var(--cor-borda);
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+#header nav ul li a:hover {
+  background: #420956;
+  border-radius: .5rem;
 }
 
-/* título tamanhos, sabores, complementos e frutas */
+/* Logo */
+.logo-central {
+  height: 28rem;
+  width: 100%;
+  padding: 6rem 5rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.logo-central img{
+  height: 70%;
+  border-radius: 1.5rem;
+}
+
+/* Navegação */
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+
+  padding: 1.3rem 1rem 2rem;
+}
+
+.nav-menu a {
+  padding: 0.5rem .7rem;
+
+  font-family: var(--font-text-principal);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+
+  transition: background 0.4s ease;
+
+  cursor: pointer;
+}
+
+.nav-menu a:hover{
+  background: #420956;
+  color: white;
+}
+
+/* Títulos */
 .titulos {
-    width: 90%;
+  padding: 1rem;
 
-    padding: 1px 0;
-    margin: 20px 0 5px 10px;
-
-    font: 700 1.5rem 'Roboto Condensed', sans-serif;
-    text-align: center;
-
-    border: 0.18rem solid var(--cor-borda);
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    border-radius: 10px;
+  font-family: var(--font-text-principal);
+  font-weight: 700;
 }
 
-/* opcões */
-
-.opcoes {
-    font: 700 1rem 'Nunito Sans', sans-serif;
-
-    margin: 5px 0 0 15px;
+/* Sessões açaí/cremes/sorvetes, complementos e tamanhos */
+.sessao-acai {
+  padding: 0 1rem 1rem 1rem;
 }
 
-.opcoes li {
-    margin: 1px 0;
+.sessao-complementos {
+  padding: 0 1rem 1rem 1rem;
 }
 
-/* frutas-disponibilidade */
-
-.frutas-disponibilidade {
-    margin-top: 5px;
+.sessao-tamanhos {
+  padding: 0 1rem 1rem 1rem;
 }
 
-/* rodape */
+/* Cards das sessões */
+.cards {
+  display: flex;
+  justify-content: space-between;
 
-.rodape {
-    height: 5vh;
-    width: 100%;
-
-    margin: 3px 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
 }
 
-.rodape-texto {
-    font: 700 1rem 'Nunito Sans', sans-serif;
+.descricao {
+  font-family: var(--font-text-principal);
+  font-size: 1.5rem;
 }
 
-.rodape a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 20px;
-    color: #F0F8FF;
-    
-    border-radius: 50%;
-
-    transition: background 0.2s;
+.imagens-cards {
+  width: 10rem;
+  object-fit: cover;
 }
 
-.rodape a:hover {
-    background: rgba(255, 255, 255, 0.2);
+/* Formulário de enviar pedido */
+#enviar-pedido {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 0 1rem 7rem;
+}
+
+#enviar-pedido .campo label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: "Playwrite GB S", cursive;
+  font-size: 1.7rem;
+}
+
+#enviar-pedido .campo textarea {
+  width: 100%;
+  padding: 0.2rem;
+
+  border: 1px solid #59429d;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+
+  resize: none;
+}
+
+#enviar-pedido .campo textarea:focus {
+  background: rgb(250, 246, 253);
+}
+
+.botao {
+  width: 100%;
+  padding: 1rem 0;
+  margin: .3rem 0;
+
+  font-family: var(--font-text-principal);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: .1rem;
+  background: #600085;
+  border: none;
+  border-radius: .5rem;
+
+  transition: background 0.4s ease;
+
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: #420956;
+}
+
+/* Media Queris */
+@media (max-width: 429px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 408px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 340px) {
+  html {
+    font-size: 46.9%;
+  }
 }
