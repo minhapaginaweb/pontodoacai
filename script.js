@@ -1,13 +1,22 @@
 function enviarPedido(event) {
-  event.preventDefault(); // Impede o envio padrão do formulário
+  event.preventDefault();
 
-  const pedido = document.getElementById('pedido').value; // Captura o valor do textarea
-  const numeroWhatsApp = '5584988057989'; // Substitua pelo número da sua loja no formato correto
-  const mensagem = encodeURIComponent(pedido); // Codifica a mensagem para URL
+  const pedido = document.getElementById('pedido').value;
+  const numeroWhatsApp = '5584988057989';
+  const mensagem = encodeURIComponent(pedido); 
 
-  // Constrói a URL do WhatsApp
-  const urlWhatsApp = `https://wa.me/${5584988057989}?text=${mensagem}`;
+  const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
 
-  // Redireciona para o WhatsApp
   window.open(urlWhatsApp, '_blank');
 }
+
+const cards = document.querySelectorAll('.cards');
+
+cards.forEach(function(card) {
+  card.addEventListener('click', function() {
+    
+    const formElement = document.querySelector('#enviar-pedido');
+    
+    formElement.scrollIntoView({ behavior: 'smooth' });
+  });
+});
